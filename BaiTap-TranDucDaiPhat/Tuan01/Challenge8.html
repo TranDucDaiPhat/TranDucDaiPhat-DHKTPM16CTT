@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+        var tips = [];
+        var total = [];
+
+        for(let i = 0; i < bills.length; i++){
+            calcTips(bills[i]);
+        }
+
+        console.log(tips)
+        console.log(total)
+
+        console.log("giá trị trung bình của hoá đơn: ", calcAverage(bills));
+
+        function calcTips(number) {
+            let tip = number >= 50 && number <= 300 ? (number * 0.15) : (number * 0.2);
+            tips.push(tip);
+            total.push(number + tip);
+        }
+
+        function calcAverage(arr) {
+            let total = 0;
+            for(let i = 0; i < arr.length; i++){
+                total += arr[i];
+            }
+            return total/arr.length;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

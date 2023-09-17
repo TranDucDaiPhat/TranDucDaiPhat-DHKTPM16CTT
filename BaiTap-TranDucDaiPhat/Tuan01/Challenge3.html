@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var Dolphins = [97, 112, 101]
+        var Koalas = [109, 95, 106]
+
+        average(Dolphins, Koalas);
+
+        function average(dolphins, koalas) {
+            function totalPoint(result, currentValue) {
+                return result += currentValue
+            }
+
+            let avrDolphins = dolphins.reduce(totalPoint) / dolphins.length;
+            let avrKoalas = koalas.reduce(totalPoint) / koalas.length;
+
+            if (avrDolphins > avrKoalas) {
+                // Điều kiện điểm phải cao hơn 100
+                if (avrDolphins > 100) {
+                    console.log('Dolphins win!');
+                } else {
+                    console.log('score Dolphins higher than Koalas but < 100');
+                }
+            } else if (avrDolphins < avrKoalas) {
+                if (avrKoalas > 100) {
+                    // Điều kiện điểm phải cao hơn 100
+                    console.log('Koalas win!');
+                } else {
+                    console.log('score Koalas higher than Dolphins but < 100');
+                }
+            } else {
+                if (avrDolphins > 100 && avrKoalas > 100) {
+                    console.log('draw!');
+                } else {
+                    console.log('both < 100');
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

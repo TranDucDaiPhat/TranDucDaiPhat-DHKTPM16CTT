@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var bills = [125, 555, 44];
+
+        calcTips(bills);
+
+        function calcTips(arr) {
+            let tips = [];
+            let total = [];
+            total = arr.map(function (number) {
+                let tip = number >= 50 && number <= 300 ? (number * 0.15) : (number * 0.2);
+                tips.push(tip);
+                return number + tip;
+            });
+
+            console.log("tips", tips);
+            console.log("total", total);
+        }   
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
